@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pixel &amp; Pine – Graphic Design Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+ <a class="logo" href="#top">Pixel &amp; Pine</a>
+ <nav><a href="#work">Work</a><a href="#services">Services</a><a href="#contact">Contact</a></nav>
+</header>
+
+<section class="hero" id="top">
+ <div>
+  <h1>Graphic design that gets noticed.</h1>
+  <p>We design logos, posters and brand identities for small businesses and creative teams.</p>
+  <a class="btn" href="#work">See our work</a>
+ </div>
+ <div class="play" id="play" aria-label="Interactive shapes that follow your cursor">
+  <span class="s1"></span><span class="s2"></span><span class="s3"></span>
+  <div class="hint">Move your cursor or finger here</div>
+ </div>
+</section>
+
+<section class="work" id="work">
+ <h2>Selected work</h2>
+ <div class="stage" id="stage" role="region" aria-roledescription="carousel" aria-label="Selected projects">
+  <div class="viewport">
+   <div class="track" id="track">
+    <figure class="slide"><div class="art a1"></div><figcaption class="cap"><h3>Harvest Moon Coffee</h3><p>Logo and packaging for a small-batch roaster.</p><div class="tags"><b>Logo</b><b>Packaging</b></div></figcaption></figure>
+    <figure class="slide"><div class="art a2"></div><figcaption class="cap"><h3>Open Air Festival</h3><p>Poster series for a three-day music event.</p><div class="tags"><b>Poster</b><b>Print</b></div></figcaption></figure>
+    <figure class="slide"><div class="art a3"></div><figcaption class="cap"><h3>Orbit Bank</h3><p>A brand identity system for a new digital bank.</p><div class="tags"><b>Brand</b><b>Web</b></div></figcaption></figure>
+    <figure class="slide"><div class="art a4"></div><figcaption class="cap"><h3>Summit Outdoors</h3><p>Icons and signage for a hiking trail network.</p><div class="tags"><b>Icons</b><b>Signage</b></div></figcaption></figure>
+   </div>
+  </div>
+  <div class="ctrl">
+   <div class="arrows"><button id="prev" aria-label="Previous project">&#8592;</button><button id="next" aria-label="Next project">&#8594;</button></div>
+   <div class="dots" id="dots"></div>
+   <div class="count" id="count" aria-live="polite">1 / 4</div>
+  </div>
+ </div>
+</section>
+
+<section class="services" id="services">
+ <div class="card"><h3>Logos</h3><p>Simple marks that work at any size.</p></div>
+ <div class="card"><h3>Posters and print</h3><p>Layouts made to be seen from across the street.</p></div>
+ <div class="card"><h3>Brand identity</h3><p>Colors, type and rules that keep everything consistent.</p></div>
+</section>
+
+<section class="contact" id="contact">
+ <h2>Have a project in mind?</h2>
+ <p>Tell us what you need and when. We reply within two working days.</p>
+ <button class="btn" id="mail">Copy our email</button>
+</section>
+<footer>© 2026 Pixel &amp; Pine</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
