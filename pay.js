@@ -35,6 +35,7 @@
     if (p) a.textContent = cur === "php" ? "Pay ₱" + fmt(p.php) : "Pay $" + fmt(p.usd);
     var url = linkFor(plan, cur);
     if (url) { a.href = url; return; }
+    if (cur === "php") { a.href = "pay-peso.html?plan=" + plan; return; }
     a.addEventListener("click", function (e) {
       e.preventDefault();
       alert("Payments are not set up yet. Add the " + cur.toUpperCase() + " payment link for \"" + plan + "\" in config.js.");
