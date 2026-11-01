@@ -4,9 +4,9 @@ window.APP_CONFIG = {
 
   // Dollar buttons: paste a Payoneer or Wise payment link when you have one.
 PAY_LINKS: {
-  logo:   { usd: "https://buy.stripe.com/test_PASTE_LOGO", php: "" },
-  poster: { usd: "https://buy.stripe.com/test_PASTE_POSTER", php: "" },
-  brand:  { usd: "https://buy.stripe.com/test_PASTE_BRAND", php: "" }
+  logo:   { usd: "https://buy.stripe.com/test_7sY3cx0mLgJHf4q0lM8AE00O", php: "" },
+  poster: { usd: "https://buy.stripe.com/test_7sY3cx0mLgJHf4q0lM8AE00", php: "" },
+  brand:  { usd: "https://buy.stripe.com/test_7sY3cx0mLgJHf4q0lM8AE00", php: "" }
 },
   // Peso buttons open the payment page with these details
   // (unless you add a PayMongo link in "php" above).
