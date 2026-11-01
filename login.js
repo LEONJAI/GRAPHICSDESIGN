@@ -59,7 +59,7 @@
 
     say("Working…");
     db.rpc("username_available", { name: d.username }).then(function (r) {
-      if (r.error) return say("Could not check the username. Run migration2.sql in Supabase.", true);
+      if (r.error) return say("Could not check the username. Run migration2.sql in Supabase. Details: " + r.error.message, true);
       if (!r.data) return say("That username is taken. Try another.", true);
       db.auth.signUp({ email: email, password: password, options: { data: d } }).then(function (res) {
         if (res.error) return say(res.error.message, true);

@@ -90,3 +90,7 @@ footer{padding:0 0 32px;color:var(--muted);font-size:.9rem}
 .auth textarea{width:100%}
 .auth #forgot{display:block;margin:10px 0 0;font-size:.95rem}
 .auth a.link{display:inline-block;margin-top:14px;text-decoration:none;font-weight:600;color:var(--blue)}
+[hidden]{display:none!important}
+.pw{position:relative}
+.pw input{padding-right:72px!important}
+.pw-toggle{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:0;color:var(--blue);font:inherit;font-weight:600;cursor:pointer;padding:6px 8px}
