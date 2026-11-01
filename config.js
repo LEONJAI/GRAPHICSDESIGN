@@ -3,12 +3,11 @@ window.APP_CONFIG = {
   SUPABASE_ANON_KEY: "sb_publishable_x33FqWGCLBE8TxZMzO3U7g_NpiJ3Y78",
 
   // Dollar buttons: paste a Payoneer or Wise payment link when you have one.
-  PAY_LINKS: {
-    logo:   { usd: "", php: "" },
-    poster: { usd: "", php: "" },
-    brand:  { usd: "", php: "" }
-  },
-
+PAY_LINKS: {
+  logo:   { usd: "https://buy.stripe.com/test_PASTE_LOGO", php: "" },
+  poster: { usd: "https://buy.stripe.com/test_PASTE_POSTER", php: "" },
+  brand:  { usd: "https://buy.stripe.com/test_PASTE_BRAND", php: "" }
+},
   // Peso buttons open the payment page with these details
   // (unless you add a PayMongo link in "php" above).
   PESO_PAY: {
