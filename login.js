@@ -21,9 +21,20 @@
     mode = mode === "login" ? "signup" : "login";
     $("title").textContent = $("submit").textContent = mode === "login" ? "Log in" : "Sign up";
     $("signupFields").hidden = mode === "login";
+    $("forgot").hidden = mode !== "login";
     $("password").autocomplete = mode === "login" ? "current-password" : "new-password";
     this.textContent = mode === "login" ? "Need an account? Sign up" : "Have an account? Log in";
     say("");
+  };
+
+  $("forgot").onclick = function () {
+    var email = $("email").value.trim();
+    if (!email) return say("Type your email above first, then click Forgot password.", true);
+    say("Sending…");
+    db.auth.resetPasswordForEmail(email, { redirectTo: new URL("reset.html", location.href).href }).then(function (r) {
+      if (r.error) return say(r.error.message, true);
+      say("If that email has an account, a reset link is on its way. Check your inbox and spam folder.");
+    });
   };
 
   function ageOf(iso) {

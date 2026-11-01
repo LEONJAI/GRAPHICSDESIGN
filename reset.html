@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reset password – Pixel &amp; Pine</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+ <header><a class="logo" href="index.html">Pixel &amp; Pine</a><nav><a href="login.html">Log in</a></nav></header>
+
+ <main class="auth">
+  <h1>New password</h1>
+  <div id="form" hidden>
+   <label for="p1">New password</label>
+   <input id="p1" type="password" minlength="8" autocomplete="new-password">
+   <label for="p2">Confirm new password</label>
+   <input id="p2" type="password" minlength="8" autocomplete="new-password">
+   <button class="btn" id="save">Save new password</button>
+  </div>
+  <div class="msg" id="msg" role="status">Checking your link…</div>
+  <a class="link" id="again" href="login.html" hidden>Back to log in</a>
+ </main>
+</div>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="reset.js"></script>
+</body>
+</html>
