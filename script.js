@@ -29,7 +29,7 @@
  play.addEventListener("pointerleave",function(){for(var j=0;j<sp.length;j++)sp[j].style.transform=""});
 
  document.getElementById("mail").onclick=function(){
-  var b=this,t="hello@jeisaru.com";
+  var b=this,t="real.leonjai@gmail.com";
   try{navigator.clipboard.writeText(t)}catch(e){}
   b.textContent="Copied: "+t;setTimeout(function(){b.textContent="Copy our email"},2500);
  };
