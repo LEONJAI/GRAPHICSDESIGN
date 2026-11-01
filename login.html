@@ -13,6 +13,20 @@
 
  <main class="auth" id="guest">
   <h1 id="title">Log in</h1>
+
+  <div id="signupFields" hidden>
+   <div class="row">
+    <div><label for="firstName">First name</label><input id="firstName" type="text" autocomplete="given-name"></div>
+    <div><label for="lastName">Last name</label><input id="lastName" type="text" autocomplete="family-name"></div>
+   </div>
+   <label for="username">Username</label>
+   <input id="username" type="text" autocomplete="username" placeholder="letters, numbers, underscore">
+   <label for="birthday">Birthday</label>
+   <input id="birthday" type="date" autocomplete="bday">
+   <label for="address">Address</label>
+   <input id="address" type="text" autocomplete="street-address">
+  </div>
+
   <label for="email">Email</label>
   <input id="email" type="email" autocomplete="email">
   <label for="password">Password</label>
@@ -20,12 +34,6 @@
   <button class="btn" id="submit">Log in</button>
   <button class="link" id="toggle">Need an account? Sign up</button>
   <div class="msg" id="msg" role="status"></div>
- </main>
-
- <main class="auth" id="member" hidden>
-  <h1>Your account</h1>
-  <p id="who"></p>
-  <button class="btn" id="logout">Log out</button>
  </main>
 </div>
 <script src="config.js"></script>

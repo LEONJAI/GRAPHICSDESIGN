@@ -12,33 +12,58 @@
   }
   var db = window.supabase.createClient(c.SUPABASE_URL, c.SUPABASE_ANON_KEY);
 
-  function show(session) {
-    $("guest").hidden = !!session;
-    $("member").hidden = !session;
-    if (session) $("who").textContent = "Signed in as " + session.user.email;
-  }
-  db.auth.getSession().then(function (r) { show(r.data.session); });
-  db.auth.onAuthStateChange(function (_e, s) { show(s); });
+  db.auth.getSession().then(function (r) { if (r.data.session) location.replace("account.html"); });
+  db.auth.onAuthStateChange(function (_e, s) { if (s) location.replace("account.html"); });
+
+  $("birthday").max = new Date().toISOString().slice(0, 10);
 
   $("toggle").onclick = function () {
     mode = mode === "login" ? "signup" : "login";
     $("title").textContent = $("submit").textContent = mode === "login" ? "Log in" : "Sign up";
+    $("signupFields").hidden = mode === "login";
+    $("password").autocomplete = mode === "login" ? "current-password" : "new-password";
     this.textContent = mode === "login" ? "Need an account? Sign up" : "Have an account? Log in";
     say("");
   };
 
+  function ageOf(iso) {
+    var b = new Date(iso), n = new Date(), a = n.getFullYear() - b.getFullYear();
+    if (n < new Date(n.getFullYear(), b.getMonth(), b.getDate())) a--;
+    return a;
+  }
+
+  function signUp(email, password) {
+    var d = {
+      first_name: $("firstName").value.trim(),
+      last_name: $("lastName").value.trim(),
+      username: $("username").value.trim().toLowerCase(),
+      birthday: $("birthday").value,
+      address: $("address").value.trim()
+    };
+    if (!d.first_name || !d.last_name) return say("Enter your first and last name.", true);
+    if (!/^[a-z0-9_]{3,20}$/.test(d.username)) return say("Username must be 3 to 20 letters, numbers or underscores.", true);
+    if (!d.birthday) return say("Enter your birthday.", true);
+    if (ageOf(d.birthday) < 13) return say("You must be at least 13 to sign up.", true);
+    if (!d.address) return say("Enter your address.", true);
+
+    say("Working…");
+    db.rpc("username_available", { name: d.username }).then(function (r) {
+      if (r.error) return say("Could not check the username. Run migration2.sql in Supabase.", true);
+      if (!r.data) return say("That username is taken. Try another.", true);
+      db.auth.signUp({ email: email, password: password, options: { data: d } }).then(function (res) {
+        if (res.error) return say(res.error.message, true);
+        if (!res.data.session) say("Check your email to confirm your account.");
+      });
+    });
+  }
+
   $("submit").onclick = function () {
     var email = $("email").value.trim(), password = $("password").value;
     if (!email || password.length < 8) return say("Enter your email and a password of at least 8 characters.", true);
+    if (mode === "signup") return signUp(email, password);
     say("Working…");
-    var req = mode === "login"
-      ? db.auth.signInWithPassword({ email: email, password: password })
-      : db.auth.signUp({ email: email, password: password });
-    req.then(function (r) {
-      if (r.error) return say(r.error.message, true);
-      say(mode === "signup" ? "Check your email to confirm your account." : "");
+    db.auth.signInWithPassword({ email: email, password: password }).then(function (r) {
+      if (r.error) say(r.error.message, true);
     });
   };
-
-  $("logout").onclick = function () { db.auth.signOut(); };
 })();

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My account – Pixel &amp; Pine</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+ <header>
+  <a class="logo" href="index.html">Pixel &amp; Pine</a>
+  <nav><a href="index.html">Home</a><a href="index.html#pricing">Pricing</a><a href="#" id="logout">Log out</a></nav>
+ </header>
+
+ <section class="profile-head">
+  <div class="avatar" id="avatar">?</div>
+  <div>
+   <h1 id="name">Loading…</h1>
+   <p class="muted" id="handle"></p>
+   <p class="muted" id="email"></p>
+   <p class="muted" id="since"></p>
+  </div>
+ </section>
+
+ <div class="profile-grid">
+  <section class="panel">
+   <h2>Profile details</h2>
+   <div class="row">
+    <div><label for="firstName">First name</label><input id="firstName" type="text" autocomplete="given-name"></div>
+    <div><label for="lastName">Last name</label><input id="lastName" type="text" autocomplete="family-name"></div>
+   </div>
+   <label for="username">Username</label>
+   <input id="username" type="text" autocomplete="username">
+   <label for="birthday">Birthday</label>
+   <input id="birthday" type="date" autocomplete="bday">
+   <p class="muted" id="age"></p>
+   <label for="address">Address</label>
+   <input id="address" type="text" autocomplete="street-address">
+   <label for="phone">Phone</label>
+   <input id="phone" type="tel" autocomplete="tel">
+   <label for="bio">About you</label>
+   <textarea id="bio" rows="3"></textarea>
+   <button class="btn" id="saveProfile">Save changes</button>
+   <div class="msg" id="profileMsg" role="status"></div>
+  </section>
+
+  <section class="panel">
+   <h2>Change password</h2>
+   <label for="newPass">New password</label>
+   <input id="newPass" type="password" minlength="8" autocomplete="new-password">
+   <button class="btn" id="savePass">Update password</button>
+   <div class="msg" id="passMsg" role="status"></div>
+
+   <h2 class="spaced">My orders</h2>
+   <p class="muted">You have no orders yet. <a href="index.html#pricing">See pricing</a></p>
+  </section>
+ </div>
+</div>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="account.js"></script>
+</body>
+</html>
