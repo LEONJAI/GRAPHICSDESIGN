@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Log in – Pixel &amp; Pine</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+ <header><a class="logo" href="index.html">Pixel &amp; Pine</a><nav><a href="index.html">Home</a></nav></header>
+
+ <main class="auth" id="guest">
+  <h1 id="title">Log in</h1>
+  <label for="email">Email</label>
+  <input id="email" type="email" autocomplete="email">
+  <label for="password">Password</label>
+  <input id="password" type="password" autocomplete="current-password" minlength="8">
+  <button class="btn" id="submit">Log in</button>
+  <button class="link" id="toggle">Need an account? Sign up</button>
+  <div class="msg" id="msg" role="status"></div>
+ </main>
+
+ <main class="auth" id="member" hidden>
+  <h1>Your account</h1>
+  <p id="who"></p>
+  <button class="btn" id="logout">Log out</button>
+ </main>
+</div>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="login.js"></script>
+</body>
+</html>
