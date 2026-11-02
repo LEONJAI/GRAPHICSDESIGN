@@ -4,18 +4,18 @@
 
   // Default prices. Override them in config.js with PRICES if you like.
   var prices = Object.assign({
-    logo: { usd: 250, php: 15400 },
-    poster: { usd: 180, php: 11100 },
-    brand: { usd: 900, php: 55400 },
-    web: { usd: 1200, php: 73900 },
-    ui: { usd: 800, php: 49300 },
-    social: { usd: 150, php: 9200 },
-    packaging: { usd: 400, php: 24600 },
-    icons: { usd: 200, php: 12300 },
-    photo: { usd: 50, php: 3100 },
-    video: { usd: 300, php: 18500 },
-    store: { usd: 1100, php: 67800 },
-    deck: { usd: 350, php: 21600 }
+    logo: { usd: 300, php: 6500 },
+    poster: { usd: 120, php: 2500 },
+    brand: { usd: 1200, php: 20000 },
+    web: { usd: 1500, php: 30000 },
+    ui: { usd: 600, php: 12000 },
+    social: { usd: 180, php: 3000 },
+    packaging: { usd: 350, php: 7000 },
+    icons: { usd: 350, php: 6000 },
+    photo: { usd: 150, php: 2500 },
+    video: { usd: 250, php: 5000 },
+    store: { usd: 1200, php: 25000 },
+    deck: { usd: 500, php: 8000 }
   }, cfg.PRICES || {});
 
   var fmt = function (n) { return n.toLocaleString("en-US"); };

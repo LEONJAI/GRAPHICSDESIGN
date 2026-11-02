@@ -2,7 +2,7 @@
   var cfg = window.APP_CONFIG || {};
   var pay = cfg.PESO_PAY || {};
   var names = { logo: "Logo design", poster: "Poster design", brand: "Brand identity", web: "Web design", ui: "UI and app design", social: "Social media pack", packaging: "Packaging design", icons: "Icons and illustration", photo: "Photo editing", video: "Motion graphics", store: "Online store design", deck: "Presentation design" };
-  var prices = Object.assign({ logo: { php: 15400 }, poster: { php: 11100 }, brand: { php: 55400 }, web: { php: 73900 }, ui: { php: 49300 }, social: { php: 9200 }, packaging: { php: 24600 }, icons: { php: 12300 }, photo: { php: 3100 }, video: { php: 18500 }, store: { php: 67800 }, deck: { php: 21600 } }, cfg.PRICES || {});
+  var prices = Object.assign({ logo: { php: 6500 }, poster: { php: 2500 }, brand: { php: 20000 }, web: { php: 30000 }, ui: { php: 12000 }, social: { php: 3000 }, packaging: { php: 7000 }, icons: { php: 6000 }, photo: { php: 2500 }, video: { php: 5000 }, store: { php: 25000 }, deck: { php: 8000 } }, cfg.PRICES || {});
   var $ = function (id) { return document.getElementById(id); };
 
   var plan = new URLSearchParams(location.search).get("plan");
