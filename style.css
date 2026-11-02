@@ -201,3 +201,17 @@ nav{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end}
 .arrows button#auto{font-size:.8rem;letter-spacing:-2px}
 .dots button{position:relative}
 .dots button::before{content:"";position:absolute;inset:-10px -4px}
+
+/* Mobile header: one tidy row with a menu button */
+.hright{display:flex;align-items:center}
+.menu-btn{display:none}
+@media (max-width:760px){
+ header{position:relative;flex-wrap:nowrap}
+ .theme{margin-left:0}
+ .theme span{display:none}
+ .menu-btn{display:inline-grid;place-items:center;width:44px;height:44px;margin-left:12px;border-radius:12px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+ #nav{display:none;position:absolute;right:0;top:100%;z-index:20;flex-direction:column;align-items:stretch;min-width:200px;padding:8px;background:var(--surface);border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+ #nav.open{display:flex}
+ #nav a{margin:0;padding:12px 14px;border-radius:12px}
+ #nav a:hover{background:var(--bg)}
+}

@@ -67,4 +67,13 @@
   };
   sync();
  }
+
+ var mb=document.getElementById("menuBtn"),nav=document.getElementById("nav");
+ if(mb&&nav){
+  var shut=function(){nav.classList.remove("open");mb.setAttribute("aria-expanded","false")};
+  mb.onclick=function(e){e.stopPropagation();var o=nav.classList.toggle("open");mb.setAttribute("aria-expanded",String(o))};
+  nav.addEventListener("click",function(e){if(e.target.closest("a"))shut()});
+  document.addEventListener("click",function(e){if(!nav.contains(e.target))shut()});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")shut()});
+ }
 })();
