@@ -215,3 +215,38 @@ nav{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end}
  #nav a{margin:0;padding:12px 14px;border-radius:12px}
  #nav a:hover{background:var(--bg)}
 }
+
+/* Services and pricing as carousels */
+.pg{flex:0 0 100%;display:grid;grid-template-columns:repeat(var(--pv,4),1fr);gap:12px;min-width:0}
+.track{touch-action:pan-y}
+#services .card{padding:16px 18px;border-radius:18px}
+#services .card h3{font-size:1.02rem;margin:0 0 2px}
+#services .card p{font-size:.92rem;line-height:1.4}
+#services .viewport,#pricing .viewport{border-radius:0}
+.pricing .pg .card{height:100%}
+
+/* Animated project artwork */
+@keyframes fl{from{transform:translateY(-8px)}to{transform:translateY(8px)}}
+@keyframes br{from{transform:scale(.92)}to{transform:scale(1.06)}}
+@keyframes sp{to{transform:rotate(360deg)}}
+@keyframes spr{to{transform:rotate(-360deg)}}
+@keyframes wob{from{transform:rotate(-9deg)}to{transform:rotate(9deg)}}
+@keyframes mv{from{transform:translateX(-14px)}to{transform:translateX(14px)}}
+@keyframes grow{from{transform:scaleX(.2)}to{transform:scaleX(1)}}
+@keyframes march{to{background-position:40px 100%}}
+@keyframes drift{to{background-position:36px 36px}}
+@keyframes sink{from{transform:translateY(0)}to{transform:translateY(70px)}}
+.a1::before{animation:br 2.4s ease-in-out infinite alternate}.a1::after{animation:fl 1.6s ease-in-out infinite alternate}
+.a2{animation:march 1.6s linear infinite}.a2::before{animation:wob 2s ease-in-out infinite alternate}
+.a3{animation:drift 2.4s linear infinite}.a3::before{animation:br 2s ease-in-out infinite alternate}
+.a4::before{animation:fl 1.8s ease-in-out infinite alternate}.a4::after{animation:mv 2.2s ease-in-out infinite alternate}
+.a5::before{animation:fl 2s ease-in-out infinite alternate}
+.a6::before{animation:sp 9s linear infinite}.a6::after{animation:mv 1.8s ease-in-out infinite alternate}
+.a7::before{animation:fl 1.7s ease-in-out infinite alternate}.a7::after{animation:fl 1.7s ease-in-out infinite alternate-reverse}
+.a8::before,.a8::after{animation:fl 2s ease-in-out infinite alternate}
+.a9::before,.a9::after{animation:fl 2.2s ease-in-out infinite alternate}
+.a10::before{border-style:dashed;animation:sp 7s linear infinite}.a10::after{border-style:dashed;animation:spr 5s linear infinite}
+.a11::before{animation:fl 2.2s ease-in-out infinite alternate}.a11::after{transform-origin:left;animation:grow 2.4s ease-in-out infinite alternate}
+.a12::before{animation:sink 3s ease-in-out infinite alternate}
+.slide:not(.on) .art,.slide:not(.on) .art::before,.slide:not(.on) .art::after{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){.art,.art::before,.art::after{animation:none!important}}
