@@ -155,3 +155,37 @@ nav{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end}
 .s8{grid-template-columns:repeat(4,1fr)}
 @media (max-width:900px){.s8{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.s8{grid-template-columns:1fr}}
+
+/* More projects (a5-a12) */
+.a5{background:#FF4F8B}.a5::before{content:"";position:absolute;inset:14% 12%;background:#fff;border-radius:14px;background-image:linear-gradient(#1B1F3B,#1B1F3B),linear-gradient(#2B3BFF,#2B3BFF),linear-gradient(#FFD23F,#FFD23F);background-repeat:no-repeat;background-size:100% 14%,60% 12%,35% 30%;background-position:0 0,16px 38%,16px 78%}
+.a6{background:#2B3BFF}.a6::before{content:"";position:absolute;width:38%;aspect-ratio:1;background:#fff;border-radius:16px;left:14%;top:14%}.a6::after{content:"";position:absolute;width:38%;aspect-ratio:1;background:#FFD23F;border-radius:50%;right:14%;bottom:14%}
+.a7{background:#FFD23F}.a7::before{content:"";position:absolute;width:46%;aspect-ratio:1;border-radius:24%;background:#FF4F8B;left:14%;top:18%;rotate:-8deg}.a7::after{content:"";position:absolute;width:46%;aspect-ratio:1;border-radius:24%;background:#2B3BFF;right:14%;bottom:16%;rotate:10deg}
+.a8{background:#0E9F6E}.a8::before{content:"";position:absolute;width:48%;height:68%;background:#fff;left:26%;top:16%;border-radius:10px}.a8::after{content:"";position:absolute;width:48%;height:18%;background:#FFD23F;left:26%;top:44%}
+.a9{background:#fff}.a9::before{content:"";position:absolute;width:42%;height:76%;background:#1B1F3B;left:29%;top:12%;border-radius:22px}.a9::after{content:"";position:absolute;width:30%;height:9%;background:#FFD23F;left:35%;top:30%;border-radius:999px;box-shadow:0 44px 0 #FF4F8B,0 88px 0 #2B3BFF}
+.a10{background:#1B1F3B}.a10::before{content:"";position:absolute;inset:14%;border-radius:50%;border:10px solid #FF4F8B}.a10::after{content:"";position:absolute;inset:30%;border-radius:50%;border:10px solid #FFD23F}
+.a11{background:#FF8A3D}.a11::before{content:"";position:absolute;width:72%;height:46%;background:#1B1F3B;left:14%;top:16%;border-radius:8px}.a11::after{content:"";position:absolute;width:34%;height:8%;background:#fff;left:14%;bottom:18%;border-radius:999px}
+.a12{background:#CFCBFF}.a12::before{content:"";position:absolute;width:40%;aspect-ratio:1;border-radius:50%;background:#FFD23F;left:14%;top:14%}.a12::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:48%;background:#2B3BFF;clip-path:polygon(0 100%,30% 22%,55% 70%,75% 38%,100% 100%)}
+/* Taller project slides + compact pricing cards, to match the services height */
+.slide{min-height:452px}
+.ctrl{flex-wrap:wrap;gap:12px}
+@media (max-width:760px){.slide{min-height:0}}
+.pricing .card{display:flex;flex-direction:column}
+.pricing .price{margin:8px 0 12px!important;font-size:1.5rem}
+.pricing .price .php{display:inline;margin-left:8px;font-size:.95rem}
+.pricing .buy{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:auto}
+.pricing .buy .btn{padding:8px 4px;font-size:.82rem;text-align:center;white-space:nowrap}
+.pricing{padding-bottom:0}
+.pricing .card{padding:18px}
+.pricing .card h3{font-size:1.02rem;margin:0 0 4px}
+.pricing .card p{font-size:.9rem;line-height:1.4}
+.pricing .price{margin:6px 0 10px!important;font-size:1.4rem}
+.pricing .buy .btn{padding:7px 4px}
+.pricing .card .price{font-size:1.4rem;line-height:1.2;margin:8px 0 10px!important}
+.pricing .card .price .php{font-size:.9rem}
+.pricing .card{padding:16px 18px 14px}
+.pricing .card .price{margin:6px 0 8px!important}
+.pricing .buy .btn{padding:6px 4px}
+
+.theme{gap:10px;color:var(--ink);font-weight:600}
+.theme svg{width:20px;height:20px}
+.theme span{white-space:nowrap}

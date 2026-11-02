@@ -1,8 +1,8 @@
 (function () {
   var cfg = window.APP_CONFIG || {};
   var pay = cfg.PESO_PAY || {};
-  var names = { logo: "Logo design", poster: "Poster design", brand: "Brand identity" };
-  var prices = Object.assign({ logo: { php: 15400 }, poster: { php: 11100 }, brand: { php: 55400 } }, cfg.PRICES || {});
+  var names = { logo: "Logo design", poster: "Poster design", brand: "Brand identity", web: "Web design", ui: "UI and app design", social: "Social media pack", packaging: "Packaging design", icons: "Icons and illustration", photo: "Photo editing", video: "Motion graphics", store: "Online store design", deck: "Presentation design" };
+  var prices = Object.assign({ logo: { php: 15400 }, poster: { php: 11100 }, brand: { php: 55400 }, web: { php: 73900 }, ui: { php: 49300 }, social: { php: 9200 }, packaging: { php: 24600 }, icons: { php: 12300 }, photo: { php: 3100 }, video: { php: 18500 }, store: { php: 67800 }, deck: { php: 21600 } }, cfg.PRICES || {});
   var $ = function (id) { return document.getElementById(id); };
 
   var plan = new URLSearchParams(location.search).get("plan");

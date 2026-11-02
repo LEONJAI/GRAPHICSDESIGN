@@ -1,5 +1,5 @@
 (function(){
- var colors=["#2B3BFF","#FF4F8B","#1B1F3B","#0E9F6E"];
+ var colors=["#2B3BFF","#FF4F8B","#1B1F3B","#0E9F6E","#2B3BFF","#1B1F3B","#FF4F8B","#0E9F6E","#1B1F3B","#2B3BFF","#0E9F6E","#FF4F8B"];
  var track=document.getElementById("track"),stage=document.getElementById("stage"),
      dots=document.getElementById("dots"),count=document.getElementById("count"),
      n=track.children.length,i=0;
