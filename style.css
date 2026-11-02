@@ -146,3 +146,12 @@ div.mrow{cursor:default}
 .qr{display:block;max-width:240px;width:100%;margin:12px auto;border-radius:12px}
 .small{font-size:.9rem;margin-top:14px}
 .peso .btn{text-align:center}
+
+/* Nav dark switch + 8-service grid */
+header{flex-wrap:wrap;gap:8px 16px}
+nav{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.theme{display:inline-flex;align-items:center;gap:8px;margin-left:20px;color:var(--muted)}
+.theme svg{width:18px;height:18px;flex:none}
+.s8{grid-template-columns:repeat(4,1fr)}
+@media (max-width:900px){.s8{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.s8{grid-template-columns:1fr}}

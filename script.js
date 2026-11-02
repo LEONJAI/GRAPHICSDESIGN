@@ -29,8 +29,21 @@
  play.addEventListener("pointerleave",function(){for(var j=0;j<sp.length;j++)sp[j].style.transform=""});
 
  document.getElementById("mail").onclick=function(){
-  var b=this,t="real.leonjai@gmail.com";
+  var b=this,t="hello@jeisaru.com";
   try{navigator.clipboard.writeText(t)}catch(e){}
   b.textContent="Copied: "+t;setTimeout(function(){b.textContent="Copy our email"},2500);
  };
+
+ var ds=document.getElementById("darkSwitch");
+ if(ds){
+  var isDark=function(){var t=document.documentElement.getAttribute("data-theme");return t?t==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches};
+  var sync=function(){ds.setAttribute("aria-checked",String(isDark()))};
+  ds.onclick=function(){
+   var next=isDark()?"light":"dark";
+   document.documentElement.setAttribute("data-theme",next);
+   try{localStorage.setItem("theme",next)}catch(e){}
+   sync();
+  };
+  sync();
+ }
 })();
