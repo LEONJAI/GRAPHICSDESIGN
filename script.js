@@ -6,7 +6,7 @@
  function carousel(stage,o){
   var track=stage.querySelector(".track"),dotsEl=stage.querySelector(".dots"),count=stage.querySelector(".count"),
       auto=stage.querySelector(".auto"),items=o.group?Array.prototype.slice.call(track.children):null,
-      slides=[],n=0,i=0,key="",timer=null,userPaused=reduce,hover=false,focused=false,inView=true,moved=false,sx=null;
+      slides=[],n=0,i=0,key="",timer=null,userPaused=false,inView=true,moved=false,sx=null;
   function build(){
    if(items){
     var g=o.grid(window.innerWidth),k=g.join("x");
@@ -26,7 +26,7 @@
   }
   function run(){
    clearInterval(timer);timer=null;
-   if(!userPaused&&!hover&&!focused&&inView&&!document.hidden&&n>1)timer=setInterval(function(){go(i+1)},o.delay||5000);
+   if(!userPaused&&inView&&!document.hidden&&n>1)timer=setInterval(function(){go(i+1)},o.delay||5000);
    count.setAttribute("aria-live",timer?"off":"polite");
   }
   function paintAuto(){
@@ -47,10 +47,6 @@
   auto.onclick=function(){userPaused=!userPaused;paintAuto();run()};
   stage.tabIndex=0;
   stage.addEventListener("keydown",function(e){if(e.key==="ArrowLeft")go(i-1);if(e.key==="ArrowRight")go(i+1)});
-  stage.addEventListener("pointerenter",function(e){if(e.pointerType==="mouse"){hover=true;run()}});
-  stage.addEventListener("pointerleave",function(e){if(e.pointerType==="mouse"){hover=false;run()}});
-  stage.addEventListener("focusin",function(){focused=true;run()});
-  stage.addEventListener("focusout",function(){focused=false;run()});
   document.addEventListener("visibilitychange",run);
   if("IntersectionObserver" in window)new IntersectionObserver(function(en){inView=en[0].isIntersecting;run()},{threshold:.2}).observe(stage);
   track.addEventListener("pointerdown",function(e){sx=e.clientX;moved=false});
