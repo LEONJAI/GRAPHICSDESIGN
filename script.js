@@ -5,8 +5,8 @@
  /* One carousel for work, services and pricing */
  function carousel(stage,o){
   var track=stage.querySelector(".track"),dotsEl=stage.querySelector(".dots"),count=stage.querySelector(".count"),
-      auto=stage.querySelector(".auto"),items=o.group?Array.prototype.slice.call(track.children):null,
-      slides=[],n=0,i=0,key="",timer=null,userPaused=false,inView=true,moved=false,sx=null;
+      items=o.group?Array.prototype.slice.call(track.children):null,
+      slides=[],n=0,i=0,key="",timer=null,inView=true,moved=false,sx=null;
   function build(){
    if(items){
     var g=o.grid(window.innerWidth),k=g.join("x");
@@ -26,12 +26,8 @@
   }
   function run(){
    clearInterval(timer);timer=null;
-   if(!userPaused&&inView&&!document.hidden&&n>1)timer=setInterval(function(){go(i+1)},o.delay||5000);
+   if(inView&&!document.hidden&&n>1)timer=setInterval(function(){go(i+1)},o.delay||5000);
    count.setAttribute("aria-live",timer?"off":"polite");
-  }
-  function paintAuto(){
-   auto.setAttribute("aria-label",userPaused?"Play slideshow":"Pause slideshow");
-   auto.innerHTML=userPaused?"&#9654;":"&#10074;&#10074;";
   }
   function go(x){
    i=(x+n)%n;
@@ -44,7 +40,6 @@
   }
   stage.querySelector(".prev").onclick=function(){go(i-1)};
   stage.querySelector(".next").onclick=function(){go(i+1)};
-  auto.onclick=function(){userPaused=!userPaused;paintAuto();run()};
   stage.tabIndex=0;
   stage.addEventListener("keydown",function(e){if(e.key==="ArrowLeft")go(i-1);if(e.key==="ArrowRight")go(i+1)});
   document.addEventListener("visibilitychange",run);
@@ -53,14 +48,14 @@
   window.addEventListener("pointerup",function(e){if(sx===null)return;var d=e.clientX-sx;moved=Math.abs(d)>10;if(Math.abs(d)>50)go(d<0?i+1:i-1);sx=null});
   if(o.clickNext)track.addEventListener("click",function(){if(!moved)go(i+1)});
   if(items)window.addEventListener("resize",function(){if(build())go(i)});
-  build();paintAuto();go(0);
+  build();go(0);
  }
 
  carousel($("workStage"),{clickNext:true,delay:5000,
-  colors:["#2B3BFF","#FF4F8B","#1B1F3B","#0E9F6E","#2B3BFF","#1B1F3B","#FF4F8B","#0E9F6E","#1B1F3B","#2B3BFF","#0E9F6E","#FF4F8B"]});
- carousel($("svcStage"),{group:true,delay:6000,colors:["#2B3BFF","#FF4F8B","#0E9F6E"],
+  colors:["#2F5D8A","#7A2E3A","#14213D","#3E6B57","#2F5D8A","#14213D","#7A2E3A","#3E6B57","#14213D","#2F5D8A","#3E6B57","#7A2E3A"]});
+ carousel($("svcStage"),{group:true,delay:6000,colors:["#2F5D8A","#7A2E3A","#3E6B57"],
   grid:function(w){return w<=560?[1,3]:w<=900?[2,2]:[4,1]}});
- carousel($("priceStage"),{group:true,delay:8000,colors:["#2B3BFF","#FF4F8B","#0E9F6E"],
+ carousel($("priceStage"),{group:true,delay:8000,colors:["#2F5D8A","#7A2E3A","#3E6B57"],
   grid:function(w){return w<=560?[1,1]:w<=900?[2,1]:[4,1]}});
 
  /* Hero shapes follow the cursor */
