@@ -41,7 +41,7 @@
   $("birthday").max = new Date().toISOString().slice(0, 10);
 
   db.auth.getSession().then(function (r) {
-    if (!r.data.session) { location.replace("login.html"); return; }
+    if (!r.data.session) { location.replace("/login"); return; }
     user = r.data.session.user;
     $("vEmail").textContent = user.email;
     loadProfile();
@@ -149,6 +149,6 @@
   };
 
   $("logout").onclick = function () {
-    db.auth.signOut().then(function () { location.href = "index.html"; });
+    db.auth.signOut().then(function () { location.href = "/"; });
   };
 })();

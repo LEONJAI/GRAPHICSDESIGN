@@ -25,7 +25,7 @@
     db.auth.updateUser({ password: a }).then(function (r) {
       if (r.error) return say(r.error.message, true);
       say("Password updated. Taking you to your account…");
-      setTimeout(function () { location.href = "account.html"; }, 1200);
+      setTimeout(function () { location.href = "/account"; }, 1200);
     });
   };
 })();

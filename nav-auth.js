@@ -3,6 +3,6 @@
   var c = window.APP_CONFIG || {}, link = document.getElementById("navAuth");
   if (!c.SUPABASE_URL || !c.SUPABASE_ANON_KEY || !window.supabase || !link) return;
   window.supabase.createClient(c.SUPABASE_URL, c.SUPABASE_ANON_KEY).auth.getSession().then(function (r) {
-    if (r.data && r.data.session) { link.textContent = "My account"; link.href = "account.html"; }
+    if (r.data && r.data.session) { link.textContent = "My account"; link.href = "/account"; }
   });
 })();

@@ -55,7 +55,10 @@
   colors:["#2F5D8A","#7A2E3A","#14213D","#3E6B57","#2F5D8A","#14213D","#7A2E3A","#3E6B57","#14213D","#2F5D8A","#3E6B57","#7A2E3A"]});
  carousel($("svcStage"),{group:true,delay:6000,colors:["#2F5D8A","#7A2E3A","#3E6B57"],
   grid:function(w){return w<=560?[1,3]:w<=900?[2,2]:[4,1]}});
- carousel($("priceStage"),{group:true,delay:8000,colors:["#2F5D8A","#7A2E3A","#3E6B57"],
+
+ carousel($("priceStageA"),{group:true,delay:8000,colors:["#2F5D8A","#7A2E3A","#3E6B57"],
+  grid:function(w){return w<=560?[1,1]:w<=900?[2,1]:[4,1]}});
+ carousel($("priceStageB"),{group:true,delay:8000,colors:["#7A2E3A","#3E6B57","#2F5D8A"],
   grid:function(w){return w<=560?[1,1]:w<=900?[2,1]:[4,1]}});
 
  /* Hero shapes follow the cursor */

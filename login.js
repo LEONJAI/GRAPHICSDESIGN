@@ -12,8 +12,8 @@
   }
   var db = window.supabase.createClient(c.SUPABASE_URL, c.SUPABASE_ANON_KEY);
 
-  db.auth.getSession().then(function (r) { if (r.data.session) location.replace("account.html"); });
-  db.auth.onAuthStateChange(function (_e, s) { if (s) location.replace("account.html"); });
+  db.auth.getSession().then(function (r) { if (r.data.session) location.replace("/account"); });
+  db.auth.onAuthStateChange(function (_e, s) { if (s) location.replace("/account"); });
 
   $("birthday").max = new Date().toISOString().slice(0, 10);
 
@@ -31,7 +31,7 @@
     var email = $("email").value.trim();
     if (!email) return say("Type your email above first, then click Forgot password.", true);
     say("Sending…");
-    db.auth.resetPasswordForEmail(email, { redirectTo: new URL("reset.html", location.href).href }).then(function (r) {
+    db.auth.resetPasswordForEmail(email, { redirectTo: new URL("/reset", location.origin).href }).then(function (r) {
       if (r.error) return say(r.error.message, true);
       say("If that email has an account, a reset link is on its way. Check your inbox and spam folder.");
     });
